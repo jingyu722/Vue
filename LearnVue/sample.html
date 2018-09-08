@@ -18,7 +18,11 @@
 	var data = { a: 1}
 	var vm = new Vue({
 		el: '#test-1',
-		data: data
+		data: data ,
+		//生命周期钩子：created钩子用来在一个实例被创建后
+		created: function() {
+			console.log('a is:'+this.a)
+		}
 	})
 	var obj = {
 		foo: 'bar'
