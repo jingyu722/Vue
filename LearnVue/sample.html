@@ -2,8 +2,32 @@
 <html>
 <head>
 	<title>Learn Vue</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-
+<div>
+	<div id="test-1">
+		<p>{{ a }}</p>	
+	</div>
+	<div id="test-2">
+		<p>{{ foo }}</p>
+	</div>
+</div>
 </body>
+<script type="text/javascript">
+	var data = { a: 1}
+	var vm = new Vue({
+		el: '#test-1',
+		data: data
+	})
+	var obj = {
+		foo: 'bar'
+	}
+	//可以阻止修改现有属性
+	Object.freeze(obj)
+	new Vue({
+		el: '#test-2',
+		data: obj
+	})
+</script>
 </html>
